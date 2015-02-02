@@ -12,9 +12,14 @@ run tar xvzf neo4j-community-2.2.0-M03-unix.tar.gz
 # update config
 run echo "remote_shell_host=0.0.0.0" >> neo4j-community-2.2.0-M03/conf/neo4j.properties
 
+add launch.sh /
+run chmod +x /launch.sh && apt-get clean
+
 # expose REST and shell server ports
 expose 7474
 expose 1337
 
+workdir /
+
 ## entrypoint
-cmd ["neo4j-community-2.2.0-M03-unix/bin/neo4j", "start"]
+cmd ["/bin/bash", "-c", "/launch.sh"]
