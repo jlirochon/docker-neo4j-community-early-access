@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NEO4J_HOME=/data/neo4j-community-2.2.0-M03
+NEO4J_HOME=/data/neo4j-community-2.2.0-M04
 
 sed -i "s|#org.neo4j.server.webserver.address=0.0.0.0|org.neo4j.server.webserver.address=$HOSTNAME|g" $NEO4J_HOME/conf/neo4j-server.properties
 
